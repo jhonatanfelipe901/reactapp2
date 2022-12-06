@@ -24,7 +24,14 @@ class Game extends Component {
   }
 
   getItems(){
-    fetch(`${connection}/api/game`)
+    fetch(`${connection}/api/game`, {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+    })
       .then(response => response.json())
       .then(items => this.setState({items: items.data != null ? items.data : []}))
       .catch(err => console.log(err))

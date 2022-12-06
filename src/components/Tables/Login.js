@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "reactstrap";
 import {connection} from '../Connection'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -23,7 +23,8 @@ export default class Login extends React.Component {
  };
 
   login = e => {
-    console.log(this.state)
+    e.preventDefault();
+    
     fetch(`${connection}/api/auth/login`, {
       method: 'post',
       headers: {
@@ -39,16 +40,31 @@ export default class Login extends React.Component {
   }
 
   onChangeUsername = e => {
-    this.setState({username: e.target.value})
+    this.setState({username: e.value})
   }
 
   onChangePassword = e => {
-    this.setState({password: e.target.value})
+    this.setState({password: e.value})
   }
 
   render() {
     return (
-     <div></div>
+     <div>
+      <Form onSubmit={this.login}>
+          <FormGroup>
+            <Label for="Name">Username</Label>
+            <Input type="text" name="Name" id="Name" onChange={this.onChangeUsername}  />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="Description">Descrição</Label>
+            <Input type="text" name="Description" id="Description" onChange={this.onChangePassword} />
+          </FormGroup>
+
+          <Button>{'Login'}</Button>
+        </Form>
+
+     </div>
     );
   }
 }

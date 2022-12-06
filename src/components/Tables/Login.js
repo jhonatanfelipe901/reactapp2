@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "reactstrap";
-import { AvForm, AvField } from "availity-reactstrap-validation";
 import {connection} from '../Connection'
 
 export default class Login extends React.Component {
@@ -49,34 +48,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <AvForm
-        onValidSubmit={this.login}
-        onInvalidSubmit={this.login}
-      >
-        <AvField
-          name="username"
-          label="Username"
-          type="text"
-          onChange={this.onChangeUsername}
-          validate={{
-            required: true
-          }}
-          chan
-        />
-        <AvField
-          name="password"
-          label="Password"
-          type="password"
-          onChange={this.onChangePassword}
-          validate={{
-            required: {
-              value: true,
-              errorMessage: "Please enter your password"
-            },
-          }}
-        />
-        <Button id="submit">Submit</Button>
-      </AvForm>
+     <div></div>
     );
   }
 }

@@ -36,41 +36,7 @@ class Main extends Component {
 
     return (
         <div>
-            { !this.state.isAuth && 
-                <div>
-                    <nav className="navbar navbar-expand navbar-dark bg-dark">
-                        <a className="navbar-brand">
-                        ChuteSal
-                        </a>
-                    </nav> 
-
-                    <Container>
-                        <Row>
-                            <Col lg="8"></Col>
-                        </Row>
-
-                        <Row>
-                            <Col /> 
-                                <Col lg="8">
-                                    <div>
-                                    <h3>
-                                        <u>Login</u>
-                                    </h3>
-                                    <hr />
-                                    <Card>
-                                        <CardBody>
-                                            <Login onLogin={this.handleLogin} />
-                                        </CardBody>
-                                    </Card>
-                                    </div>
-                                </Col>
-                            <Col />
-                        </Row>
-                    </Container>  
-                </div>
-              
-              
-            } 
+            
 
             { this.state.isAuth &&
                 <div>

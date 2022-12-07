@@ -54,7 +54,7 @@ class Game extends Component {
   }
 
   onChangeTeamASelect = e => {
-    this.setState({teamAId: e.value})
+    this.setState({teamAId: e.value,isAuth: true})
   }
 
   render() {

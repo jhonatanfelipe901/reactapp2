@@ -17,7 +17,7 @@ class Insight extends Component {
   getChampionshipInsights(){
     fetch(`${connection}/api/insight/GetChampionshipInsights`)
       .then(response => response.json())
-      .then(items => this.setState({championshipsFinished: items.data.championshipFinishedList != null ? items.data.championshipFinishedList : [], 
+      .then(items => this.setState({championshipsFinished: items.data.championshipFinishedList != null ? items.data.championshipFinishedList : [], isAuth: true, 
                                     championshipsNotFinished: items.data.championshipNotFinishedList != null ? items.data.championshipNotFinishedList : []}))
       .catch(err => console.log(err))
 
@@ -27,7 +27,7 @@ class Insight extends Component {
   getGamesInsights(){
     fetch(`${connection}/api/insight/GetGamesInsights`)
       .then(response => response.json())
-      .then(items => this.setState({gamesFinished: items.data.gameFinishedList != null ? items.data.gameFinishedList : [], 
+      .then(items => this.setState({gamesFinished: items.data.gameFinishedList != null ? items.data.gameFinishedList : [], isAuth: true,
                                     gamesNotFinished: items.data.gameNotFinishedList != null ? items.data.gameNotFinishedList : []}))
       .catch(err => console.log(err))
 

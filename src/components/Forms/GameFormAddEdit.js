@@ -31,13 +31,13 @@ class GameFormAddEdit extends React.Component {
     // if item exists, populate the state with proper data 
     if(this.props.item){
       const { id, name, description, championshipId, teamAId, teamBId } = this.props.item
-      this.setState({ id, name, description, championshipId, teamAId, teamBId  })
+      this.setState({ id, name, description, championshipId, teamAId, teamBId, isAuth: true })
     }
   }
 
   getTeams = (championshipId) => {
     fetch(`${connection}/api/team/SelectList?championshipId=${parseInt(championshipId)}`)
-      .then(response => response.json(), this.setState({isShowSelectListTeam: true}))
+      .then(response => response.json(), this.setState({isShowSelectListTeam: true, isAuth: true} ))
       .then(items => this.state.teams = items.data)
       .catch(err => console.log(err))
   }
@@ -56,11 +56,11 @@ class GameFormAddEdit extends React.Component {
   }
 
   onChangeTeamASelect = e => {
-    this.setState({teamAId: e.value})
+    this.setState({teamAId: e.value, isAuth: true})
   }
   
   onChangeTeamBSelect = e => {
-    this.setState({teamBId: e.value})
+    this.setState({teamBId: e.value, isAuth: true})
   }
 
   submitFormAdd = e => {

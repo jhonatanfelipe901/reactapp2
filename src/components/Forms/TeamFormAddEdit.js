@@ -51,7 +51,7 @@ class TeamFormAddEdit extends React.Component {
     // if item exists, populate the state with proper data 
     if(this.props.item){
       const { id, name, description, logoImageUrl } = this.props.item
-      this.setState({ id, name, description, logoImageUrl  })
+      this.setState({ id, name, description, logoImageUrl, isAuth: true  })
     }
   }
 

@@ -10,7 +10,7 @@ class ChampionshipFormAddEdit extends React.Component {
   }
 
   onChange = e => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value, isAuth: true})
   }
 
   submitFormAdd = e => {
@@ -49,7 +49,7 @@ class ChampionshipFormAddEdit extends React.Component {
     // if item exists, populate the state with proper data 
     if(this.props.item){
       const { id, name, description, logoImageUrl } = this.props.item
-      this.setState({ id, name, description, logoImageUrl  })
+      this.setState({ id, name, description, logoImageUrl, isAuth: true  })
     }
   }
 

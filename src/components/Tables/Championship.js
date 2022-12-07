@@ -20,7 +20,7 @@ class Championship extends Component {
   getItems(){
     fetch(`${connection}/api/championship`)
       .then(response => response.json())
-      .then(items => this.setState({items: items.data != null ? items.data : []}))
+      .then(items => this.setState({items: items.data != null ? items.data : [], isAuth: true}))
       .catch(err => console.log(err))
   }
 

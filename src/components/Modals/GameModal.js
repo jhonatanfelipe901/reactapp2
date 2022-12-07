@@ -14,7 +14,7 @@ class GameModal extends Component {
 
   toggle = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal, isAuth: true
     }))
   }
 

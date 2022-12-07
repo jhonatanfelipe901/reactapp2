@@ -13,7 +13,7 @@ class ChampionshipModal extends Component {
 
   toggle = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal, isAuth: true
     }))
   }
 

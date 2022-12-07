@@ -15,7 +15,9 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {isAuth: false};
+    let isAlreadyAuth = this.state.isAuth ? true : false;
+    console.log(this.state)
+    this.state = {isAuth: isAlreadyAuth};
   }
 
   componentWillMount(){

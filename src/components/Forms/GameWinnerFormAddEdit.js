@@ -24,16 +24,16 @@ class GameWinnerFormAddEdit extends React.Component {
     // if item exists, populate the state with proper data 
     if(this.props.item){
       const { id, championshipId } = this.props.item
-      this.setState({ id, championshipId })
+      this.setState({ id, championshipId, isAuth: true })
     }
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({value: event.target.value, isAuth: true});
   }
 
   onChange = e => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value, isAuth: true})
   }
 
   submitFormAdd = e => {

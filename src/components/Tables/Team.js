@@ -59,6 +59,7 @@ class Team extends Component {
         </tr>
         )
       })
+      
 
     return (
 

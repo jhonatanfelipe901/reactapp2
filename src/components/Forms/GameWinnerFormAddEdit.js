@@ -37,7 +37,8 @@ class GameWinnerFormAddEdit extends React.Component {
   }
 
   submitFormAdd = e => {
-    fetch('https://localhost:44357/api/game/PutWinner', {
+    
+    fetch(`${connection}/api/game/PutWinner`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json'

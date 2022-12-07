@@ -15,7 +15,7 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    let isAlreadyAuth = this.state.isAuth ? true : false;
+    let isAlreadyAuth = this.state?.isAuth ? true : false;
     console.log(this.state)
     this.state = {isAuth: isAlreadyAuth};
   }

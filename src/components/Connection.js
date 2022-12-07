@@ -1,3 +1,3 @@
-const connection = "https://dddd.azurewebsites.net";
+const connection = "https://projetoads20221206213647.azurewebsites.net";
 
 export { connection }

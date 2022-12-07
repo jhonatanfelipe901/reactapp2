@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
 import ChampionshipWinnerFormLook from '../Forms/ChampionshipWinnerFormLook'
+import {connection} from '../Connection'
 
 class ChampionshipWinnerModal extends Component {
 

@@ -28,6 +28,7 @@ class GameFormAddEdit extends React.Component {
 
   componentDidMount(){
 
+    console.log(this.props)
     // if item exists, populate the state with proper data 
     if(this.props.item){
       const { id, name, description, championshipId, teamAId, teamBId } = this.props.item

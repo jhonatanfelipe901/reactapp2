@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
 import GameFormAddEdit from '../Forms/GameFormAddEdit'
+import {connection} from '../Connection'
 
 class GameModal extends Component {
 
@@ -14,7 +15,7 @@ class GameModal extends Component {
   }
 
   getChampionships(){
-    fetch(`${connection}/api/championship`)
+    fetch(`${connection}/api/championship/SelectList`)
       .then(response => response.json())
       .then(items => this.setState({championships: items.data != null ? items.data : [], isAuth: true}))
       .catch(err => console.log(err))

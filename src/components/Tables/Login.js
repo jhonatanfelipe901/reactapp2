@@ -24,7 +24,7 @@ export default class Login extends React.Component {
 
   login = e => {
     e.preventDefault();
-    
+
     fetch(`${connection}/api/auth/login`, {
       method: 'post',
       headers: {
@@ -57,7 +57,7 @@ export default class Login extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Label for="Description">Descrição</Label>
+            <Label for="Description">Senha</Label>
             <Input type="text" name="Description" id="Description" onChange={this.onChangePassword} />
           </FormGroup>
 

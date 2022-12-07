@@ -12,7 +12,7 @@ class ChampionshipWinnerFormLook extends React.Component {
     if(this.props.item){
       console.log(this.props.item);
       const { ownerTeamName } = this.props.item
-      this.setState({ ownerTeamName  })
+      this.setState({ ownerTeamName, isAuth: true  })
     }
   }
 

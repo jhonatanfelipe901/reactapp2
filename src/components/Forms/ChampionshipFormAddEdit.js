@@ -14,6 +14,7 @@ class ChampionshipFormAddEdit extends React.Component {
   }
 
   submitFormAdd = e => {
+    this.setState({isAuth: true})
     fetch(`${connection}/api/championship`, {
       method: 'post',
       headers: {
@@ -25,7 +26,7 @@ class ChampionshipFormAddEdit extends React.Component {
         Description: this.state.Description
       })
     })
-      .then(response => response.json())
+      .then(response => response.json(), this.setState({isAuth: true}))
       .catch(err => console.log(err))
   }
 
@@ -41,7 +42,7 @@ class ChampionshipFormAddEdit extends React.Component {
         Description: this.state.description
       })
     })
-      .then(response => response.json())
+      .then(response => response.json(), this.setState({isAuth: true}))
       .catch(err => console.log(err))
   }
 

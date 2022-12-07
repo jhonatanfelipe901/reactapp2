@@ -15,8 +15,9 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    let isAlreadyAuth = this.state?.isAuth ? true : false;
-    console.log(this.state)
+    var auth = sessionStorage.getItem("isAuth");
+    console.log(auth)
+    let isAlreadyAuth = auth ? true : false;
     this.state = {isAuth: isAlreadyAuth};
   }
 
@@ -27,10 +28,19 @@ class Main extends Component {
   }
 
   handleLogin = (auth) => {
+
+    sessionStorage.setItem("isAuth", true);
+
     this.setState({isAuth: true});
+    // Access value associated with the key
+
+// Assign value to a key
+    sessionStorage.setItem("item_key", item_value);
   };
 
   handleLogout = () => {
+    sessionStorage.setItem("isAuth", false);
+
     this.setState({isAuth: false});
   };
 

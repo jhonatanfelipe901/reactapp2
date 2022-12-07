@@ -78,15 +78,7 @@ class GameFormAddEdit extends React.Component {
         TeamBId: this.state.teamBId
       })
     })
-      .then(response => response.json())
-      .then(item => {
-        if(Array.isArray(item)) {
-          this.props.addItemToState(item[0])
-          this.props.toggle()
-        } else {
-          console.log('failure')
-        }
-      })
+      .then(response => response.json(), this.setState({ isAuth: true }))
       .catch(err => console.log(err))
   }
 

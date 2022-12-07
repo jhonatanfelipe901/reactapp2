@@ -10,6 +10,14 @@ class GameModal extends Component {
       modal: false,
       teams: []
     }
+    
+  }
+
+  getChampionships(){
+    fetch(`${connection}/api/championship`)
+      .then(response => response.json())
+      .then(items => this.setState({championships: items.data != null ? items.data : [], isAuth: true}))
+      .catch(err => console.log(err))
   }
 
   toggle = () => {
@@ -19,6 +27,7 @@ class GameModal extends Component {
   }
 
   componentWillMount(){
+    this.getChampionships();
   } 
 
   render() {

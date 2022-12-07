@@ -11,6 +11,13 @@ class ChampionshipWinnerModal extends Component {
     }
   }
 
+  getChampionships(){
+    fetch(`${connection}/api/championship`)
+      .then(response => response.json())
+      .then(items => this.setState({championships: items.data != null ? items.data : [], isAuth: true}))
+      .catch(err => console.log(err))
+  }
+
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal

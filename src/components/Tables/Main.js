@@ -35,7 +35,6 @@ class Main extends Component {
     // Access value associated with the key
 
 // Assign value to a key
-    sessionStorage.setItem("item_key", item_value);
   };
 
   handleLogout = () => {
